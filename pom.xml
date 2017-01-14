@@ -13,6 +13,7 @@
         <module>spring-register</module>
         <module>spring-provider</module>
         <module>spring-consumer</module>
+        <module>spring-config-server</module>
     </modules>
 
     <properties>
