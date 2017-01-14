@@ -1,5 +1,6 @@
 package com.kakachan.consumer.controller;
 
+import com.kakachan.consumer.webservice.ComputeClient;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,12 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumerController {
     private final Logger logger = Logger.getLogger(getClass());
+
     @Autowired
-    RestTemplate restTemplate;
+    ComputeClient computeClient;
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String add() {
-        return restTemplate.getForEntity("http://provider-service/add?a=10&b=20", String.class).getBody();
+    public Integer add() {
+        return computeClient.add(10, 20);
     }
 }
