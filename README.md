@@ -1,6 +1,6 @@
 spring projects
 
-服务发现与负载均衡管理
+服务注册发现与负载均衡管理
 use Eureka
 project: spring-register
 http://localhost:9500/
